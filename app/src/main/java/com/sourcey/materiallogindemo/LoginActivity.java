@@ -68,12 +68,17 @@ public class LoginActivity extends AppCompatActivity {
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        // Implement your authentication logic here. On complete call either onLoginSuccess
-        // or onLoginFailed
-        onLoginSuccess();
-        // onLoginFailed();
+        // TODO: Implement your own authentication logic here.
 
-        progressDialog.dismiss();
+        new android.os.Handler().postDelayed(
+                new Runnable() {
+                    public void run() {
+                        // On complete call either onLoginSuccess or onLoginFailed
+                        onLoginSuccess();
+                        // onLoginFailed();
+                        progressDialog.dismiss();
+                    }
+                }, 3000);
     }
 
 
@@ -86,6 +91,12 @@ public class LoginActivity extends AppCompatActivity {
                 this.finish();
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        // disable going back the the MainActivity
+        moveTaskToBack(true);
     }
 
     public void onLoginSuccess() {

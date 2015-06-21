@@ -64,12 +64,17 @@ public class SignupActivity extends AppCompatActivity {
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        // Implement your authentication logic here. On complete call either onSignupSuccess
-        // or onSignupFailed
-        onSignupSuccess();
-        // onSignupFailed();
+        // TODO: Implement your own signup logic here.
 
-        progressDialog.dismiss();
+        new android.os.Handler().postDelayed(
+                new Runnable() {
+                    public void run() {
+                        // On complete call either onSignupSuccess or onSignupFailed
+                        onSignupSuccess();
+                        // onSignupFailed();
+                        progressDialog.dismiss();
+                    }
+                }, 3000);
     }
 
 
