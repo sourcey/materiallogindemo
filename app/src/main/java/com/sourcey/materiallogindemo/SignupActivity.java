@@ -45,7 +45,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     public void signup() {
-        Log.d(TAG, "Register");
+        Log.d(TAG, "Signup");
 
         if (!validate()) {
             onSignupFailed();
@@ -70,6 +70,7 @@ public class SignupActivity extends AppCompatActivity {
                 new Runnable() {
                     public void run() {
                         // On complete call either onSignupSuccess or onSignupFailed
+                        // depending on success
                         onSignupSuccess();
                         // onSignupFailed();
                         progressDialog.dismiss();
