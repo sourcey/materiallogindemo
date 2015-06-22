@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login() {
         Log.d(TAG, "Login");
-        
+
         if (!validate()) {
             onLoginFailed();
             return;
@@ -87,7 +87,8 @@ public class LoginActivity extends AppCompatActivity {
         if (requestCode == REQUEST_SIGNUP) {
             if (resultCode == RESULT_OK) {
 
-                // If the user signs up successfully we can log them in automatically
+                // TODO: Implement successful signup logic here
+                // By default we just finish the Activity and log them in automatically
                 this.finish();
             }
         }
@@ -95,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // disable going back the the MainActivity
+        // Disable going back to the MainActivity
         moveTaskToBack(true);
     }
 
