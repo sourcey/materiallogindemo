@@ -2,6 +2,7 @@ package com.sourcey.materiallogindemo;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -16,8 +17,11 @@ import butterknife.InjectView;
 public class SignupActivity extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
 
+    @InjectView(R.id.til_name) TextInputLayout _nameLayout;
     @InjectView(R.id.input_name) EditText _nameText;
+    @InjectView(R.id.til_email) TextInputLayout _emailLayout;
     @InjectView(R.id.input_email) EditText _emailText;
+    @InjectView(R.id.til_password) TextInputLayout _passwordLayout;
     @InjectView(R.id.input_password) EditText _passwordText;
     @InjectView(R.id.btn_signup) Button _signupButton;
     @InjectView(R.id.link_login) TextView _loginLink;
@@ -99,24 +103,24 @@ public class SignupActivity extends AppCompatActivity {
         String password = _passwordText.getText().toString();
 
         if (name.isEmpty() || name.length() < 3) {
-            _nameText.setError("at least 3 characters");
+            _nameLayout.setError("at least 3 characters");
             valid = false;
         } else {
-            _nameText.setError(null);
+            _nameLayout.setError(null);
         }
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _emailText.setError("enter a valid email address");
+            _emailLayout.setError("enter a valid email address");
             valid = false;
         } else {
-            _emailText.setError(null);
+            _emailLayout.setError(null);
         }
 
         if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("between 4 and 10 alphanumeric characters");
+            _passwordLayout.setError("between 4 and 10 alphanumeric characters");
             valid = false;
         } else {
-            _passwordText.setError(null);
+            _passwordLayout.setError(null);
         }
 
         return valid;
