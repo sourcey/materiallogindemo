@@ -27,4 +27,9 @@
         <item name="android:background">@color/primary</item>
     </style>
 
+    <style name="Widget.Design.TextInputLayout" parent="android:Widget">
+        <item name="hintTextAppearance">@style/TextAppearance.Design.Hint</item>
+        <item name="errorTextAppearance">@color/white</item>
+    </style>
+
 </resources>
