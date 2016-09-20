@@ -45,18 +45,6 @@
                 android:hint="Address" />
         </android.support.design.widget.TextInputLayout>
 
-        <!-- TIN number Label -->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_tinNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="Tin Number" />
-        </android.support.design.widget.TextInputLayout>
 
 
         <!--  Email Label -->

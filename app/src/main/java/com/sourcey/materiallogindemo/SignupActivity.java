@@ -18,7 +18,6 @@ public class SignupActivity extends AppCompatActivity {
 
     @Bind(R.id.input_name) EditText _nameText;
     @Bind(R.id.input_address) EditText _addressText;
-    @Bind(R.id.input_tinNumber) EditText _tinNumberText;
     @Bind(R.id.input_email) EditText _emailText;
     @Bind(R.id.input_mobile) EditText _mobileText;
     @Bind(R.id.input_password) EditText _passwordText;
@@ -66,7 +65,6 @@ public class SignupActivity extends AppCompatActivity {
 
         String name = _nameText.getText().toString();
         String address = _addressText.getText().toString();
-        String tinNumber = _tinNumberText.getText().toString();
         String email = _emailText.getText().toString();
         String mobile = _mobileText.getText().toString();
         String password = _passwordText.getText().toString();
@@ -104,7 +102,6 @@ public class SignupActivity extends AppCompatActivity {
 
         String name = _nameText.getText().toString();
         String address = _addressText.getText().toString();
-        String tinNumber = _tinNumberText.getText().toString();
         String email = _emailText.getText().toString();
         String mobile = _mobileText.getText().toString();
         String password = _passwordText.getText().toString();
@@ -124,12 +121,6 @@ public class SignupActivity extends AppCompatActivity {
             _addressText.setError(null);
         }
 
-        if (tinNumber.isEmpty() || tinNumber.length()!=11) {
-            _tinNumberText.setError("Enter Valid Tin Number");
-            valid = false;
-        } else {
-            _tinNumberText.setError(null);
-        }
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             _emailText.setError("enter a valid email address");
